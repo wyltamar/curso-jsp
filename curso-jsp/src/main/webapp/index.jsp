@@ -8,10 +8,19 @@
 </head>
 <body>
 	
-	<h1>Bem vindo ao Curso JSP</h1>
 	<br>
 	
-	<%out.println("Testando o funcionamento do JSP - ok");%>
+		<form action="receber-nome.jsp">
+			
+			<label>Nome:</label>
+			<input name="nome">
+			
+			<label>Idade:</label>
+			<input name="idade">
+			
+			<input type="submit" value="Enviar">
+		
+		</form>
 	
 </body>
 </html>
