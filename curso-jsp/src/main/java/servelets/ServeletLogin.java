@@ -25,9 +25,11 @@ public class ServeletLogin extends HttpServlet {
 
 	/*Recebe os dados enviados por um formuláiro*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("idade"));
+		System.out.println("Nome: "+request.getParameter("nome"));
+		System.out.println("Idade: "+request.getParameter("idade"));
 		
+		int status = response.getStatus();
+		System.out.println("Status da requisição: "+status);
 	
 	}
 
