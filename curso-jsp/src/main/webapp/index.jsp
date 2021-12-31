@@ -10,7 +10,7 @@
 	
 	<br>
 	
-		<form action="receber-nome.jsp">
+		<form action="ServeletLogin" method="post">
 			
 			<label>Nome:</label>
 			<input name="nome">
