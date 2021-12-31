@@ -1,11 +1,15 @@
 package servelets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.ModelLogin;
 
 
 @WebServlet("/ServeletLogin") /*Mapeamento de URL que vem da tela*/
@@ -25,11 +29,23 @@ public class ServeletLogin extends HttpServlet {
 
 	/*Recebe os dados enviados por um formuláiro*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Nome: "+request.getParameter("nome"));
-		System.out.println("Idade: "+request.getParameter("idade"));
 		
-		int status = response.getStatus();
-		System.out.println("Status da requisição: "+status);
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		
+		if(login != null && !login.isEmpty() && password != null && !password.isEmpty()) {
+			
+			ModelLogin modelLogin = new ModelLogin();
+			modelLogin.setLogin(login);
+			modelLogin.setPassword(password);
+		}else {
+			
+			RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
+			request.setAttribute("msg", "Enter the login and password correctly!");
+			redirect.forward(request, response);
+			
+		}
+
 	
 	}
 
