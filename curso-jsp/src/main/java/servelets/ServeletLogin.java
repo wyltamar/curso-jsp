@@ -38,6 +38,20 @@ public class ServeletLogin extends HttpServlet {
 			ModelLogin modelLogin = new ModelLogin();
 			modelLogin.setLogin(login);
 			modelLogin.setPassword(password);
+			
+			if(modelLogin.getLogin().equals("admin") 
+					&& modelLogin.getPassword().equals("admin")) {
+				request.getSession().setAttribute("user", modelLogin.getLogin());
+				RequestDispatcher redirect = request.getRequestDispatcher("principal/principal.jsp");
+				redirect.forward(request, response);
+				
+			}else {
+				
+				RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
+				request.setAttribute("msg", "Enter the login and password correctly!");
+				redirect.forward(request, response);
+			}
+			
 		}else {
 			
 			RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
