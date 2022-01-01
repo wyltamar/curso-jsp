@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.ModelLogin;
 
 
-@WebServlet("/ServeletLogin") /*Mapeamento de URL que vem da tela*/
+@WebServlet(urlPatterns = {"/ServeletLogin", "/principal/ServeletLogin"}) /*Mapeamento de URL que vem da tela*/
 public class ServeletLogin extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -32,6 +32,7 @@ public class ServeletLogin extends HttpServlet {
 		
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
+		String url = request.getParameter("url");
 		
 		if(login != null && !login.isEmpty() && password != null && !password.isEmpty()) {
 			
@@ -42,12 +43,18 @@ public class ServeletLogin extends HttpServlet {
 			if(modelLogin.getLogin().equals("admin") 
 					&& modelLogin.getPassword().equals("admin")) {
 				request.getSession().setAttribute("user", modelLogin.getLogin());
-				RequestDispatcher redirect = request.getRequestDispatcher("principal/principal.jsp");
+				
+				if(url == null || url.equals("null")) {
+					
+					url = "principal/principal.jsp";
+				}
+				
+				RequestDispatcher redirect = request.getRequestDispatcher(url);
 				redirect.forward(request, response);
 				
 			}else {
 				
-				RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
+				RequestDispatcher redirect = request.getRequestDispatcher("/index.jsp");
 				request.setAttribute("msg", "Enter the login and password correctly!");
 				redirect.forward(request, response);
 			}
