@@ -41,7 +41,8 @@ public class ServeletLogin extends HttpServlet {
 			modelLogin.setPassword(password);
 			
 			if(modelLogin.getLogin().equals("admin") 
-					&& modelLogin.getPassword().equals("admin")) {
+					&& modelLogin.getPassword().equals("admin")) { /*SIMULANDO LOGIN*/
+				
 				request.getSession().setAttribute("user", modelLogin.getLogin());
 				
 				if(url == null || url.equals("null")) {

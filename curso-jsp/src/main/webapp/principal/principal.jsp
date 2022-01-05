@@ -7,6 +7,6 @@
 <title>Página Principal</title>
 </head>
 <body>
-	<h1>User successfully logged in!</h1>
+	<h1>Usuário logado com sucesso!</h1>
 </body>
 </html>
