@@ -66,6 +66,11 @@ public class FilterAutenticacao implements Filter {
 			
 	  }catch(Exception e) {
 		  e.printStackTrace();
+		  
+		  RequestDispatcher redirect = request.getRequestDispatcher("erro.jsp");
+			request.setAttribute("msg", e.getMessage());
+			redirect.forward(request, response);
+		  
 		  try {
 			connection.rollback();
 		} catch (SQLException e1) {
