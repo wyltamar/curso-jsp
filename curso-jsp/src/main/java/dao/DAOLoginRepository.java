@@ -15,9 +15,8 @@ public class DAOLoginRepository {
 		connection = SingleConnectionBanco.getConnection();
 	}
 
-	public boolean validarAutenticacao(ModelLogin modelLogin) {
+	public boolean validarAutenticacao(ModelLogin modelLogin) throws Exception {
 
-		try {
 
 			String sql = "SELECT * FROM model_login WHERE login = ? AND password_b = ?";
 
@@ -29,13 +28,12 @@ public class DAOLoginRepository {
 
 			if (result.next()) {
 				return true; /*autenticado*/
+			}else {
+				
+				return false; /*não autenticado*/
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 
-		return false; /*não autenticado*/
 	}
 
 }
