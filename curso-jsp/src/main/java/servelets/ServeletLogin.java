@@ -32,13 +32,14 @@ public class ServeletLogin extends HttpServlet {
 	/*Recebe os dados enviados por um formuláiro*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		try {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		String url = request.getParameter("url");
 		
 		if(login != null && !login.isEmpty() && password != null && !password.isEmpty()) {
 			
-			ModelLogin modelLogin = new ModelLogin();
+			ModelLogin modelLogin = null;//new ModelLogin();
 			modelLogin.setLogin(login);
 			modelLogin.setPassword(password);
 			
@@ -69,7 +70,14 @@ public class ServeletLogin extends HttpServlet {
 			
 		}
 
-	
+	}catch(Exception e) {
+		e.printStackTrace();
+		RequestDispatcher redirect = request.getRequestDispatcher("erro.jsp");
+		request.setAttribute("msg", e.getMessage());
+		redirect.forward(request, response);
+		
+	}
+		
 	}
 
 }
