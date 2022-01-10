@@ -31,7 +31,9 @@
 		top: 85%;
 		left: 33%;
 		right: 33%;
-		color: red;
+		color: #842029;
+    	background-color: #f8d7da;
+    	border-color: #f5c2c7;
 	}
 	
 	
@@ -46,30 +48,31 @@
 	<form action="ServeletLogin" method="post" class="row g-3 needs-validation" novalidate>
 		<input type="hidden" value="<%= request.getParameter("url")%>" name="url">
 		
-	<div class="col-md-6">
+	<div class=""mb-3"">
 		<label class="form-label">Login</label>
 		<input name="login" type="text" class="form-control" required>
-		
-	    <div class="invalid-feedback">
-     	  Informe um login válido
-   		 </div>
-   		 
+		 
    		 <div class="valid-feedback">
       		Login informado	
     	</div>
-	</div>
-	
-	<div class="col-md-6">						
-		<label class="form-label">Senha</label>
-		<input name="password" type="password" class="form-control" required>
-		
-	    <div class="invalid-feedback">
-     	 Informe uma senha válida
+    	
+    	<div class="invalid-feedback">
+     	 	 Informe um login válido
    		 </div>
    		 
+	</div>
+	
+	<div class=""mb-3"">						
+		<label class="form-label">Senha</label>
+		<input name="password" type="password" class="form-control" required>
+		 
    		 <div class="valid-feedback">
      		 Senha informada
     	</div>
+    	
+    	<div class="invalid-feedback">
+     		 Informe uma senha válida
+   		</div>
 	</div>		
 
 	
