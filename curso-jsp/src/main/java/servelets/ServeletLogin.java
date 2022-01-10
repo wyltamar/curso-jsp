@@ -39,7 +39,7 @@ public class ServeletLogin extends HttpServlet {
 		
 		if(login != null && !login.isEmpty() && password != null && !password.isEmpty()) {
 			
-			ModelLogin modelLogin = null;//new ModelLogin();
+			ModelLogin modelLogin = new ModelLogin();
 			modelLogin.setLogin(login);
 			modelLogin.setPassword(password);
 			
@@ -58,14 +58,14 @@ public class ServeletLogin extends HttpServlet {
 			}else {
 				
 				RequestDispatcher redirect = request.getRequestDispatcher("/index.jsp");
-				request.setAttribute("msg", "Enter the login and password correctly!");
+				request.setAttribute("msg", "Informe login e senha corretamente!");
 				redirect.forward(request, response);
 			}
 			
 		}else {
 			
 			RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
-			request.setAttribute("msg", "Enter the login and password correctly!");
+			request.setAttribute("msg", "Informe login e senha corretamente!");
 			redirect.forward(request, response);
 			
 		}
