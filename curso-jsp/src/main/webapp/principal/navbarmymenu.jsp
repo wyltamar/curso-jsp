@@ -18,7 +18,7 @@
                                       <li class="more-details">
                                           <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
                                           <a href="#!"><i class="ti-settings"></i>Settings</a>
-                                          <a href="/curso-jsp"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                                          <a href="ServeletLogin?acao=logout"><i class="ti-layout-sidebar-left"></i>Logout</a>
                                       </li>
                                   </ul>
                               </div>

@@ -26,7 +26,18 @@ public class ServeletLogin extends HttpServlet {
 
     /*Recebe os dados pela url por meio de parâmetros*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		
+		String acao = request.getParameter("acao");
+		
+		if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("logout") ) {
+			request.getSession().invalidate();
+			RequestDispatcher redireciona = request.getRequestDispatcher("index.jsp");
+			redireciona.forward(request, response);
+		}
+		else {			
+			doPost(request,response);
+		}
+		
 	}
 
 	/*Recebe os dados enviados por um formuláiro*/
