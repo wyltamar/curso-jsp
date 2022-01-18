@@ -32,25 +32,36 @@
 								<div class="page-wrapper">
 									<!-- Page-body start -->
 									<div class="page-body">
-										
-											<h3>Cadastro de usuário</h3>
 
-											<form>
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Id:</label>
-													<div class="col-sm-1">
-														<input type="text" class="form-control" disabled="disabled" >
+
+										<div class="row">
+											<div class="col-sm-12">
+												<!-- Basic Form Inputs card start -->
+												<div class="card">
+													<div class="card-header">
+														<h5>Cadastro de usuário</h5>
+														
 													</div>
+													
 												</div>
-												
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Nome:</label>
-													<div class="col-sm-10">
-														<input type="text" class="form-control"  >
-													</div>
+											</div>
+										</div>
+
+										<form>
+											<div class="form-group row">
+											<label class="col-sm-1 col-form-label">ID:</label>
+												<div class="col-sm-1">
+													<input type="text" class="form-control"
+													 disabled="disabled" >
 												</div>
-											</form>
-										
+												<label class="col-sm-1 col-form-label">Nome:</label>
+												<div class="col-sm-9">
+													<input type="text" class="form-control"
+														placeholder="Nome do usuário">
+												</div>
+											</div>
+										</form>
+
 									</div>
 									<!-- Page-body end -->
 								</div>
