@@ -38,28 +38,46 @@
 											<div class="col-sm-12">
 												<!-- Basic Form Inputs card start -->
 												<div class="card">
-													<div class="card-header">
-														<h5>Cadastro de usuário</h5>
-														
+													<div class="card-block">
+														<div class="card-header">
+															<h5>Cadastro de usuário</h5>
+
+														</div>
+
 													</div>
-													
 												</div>
 											</div>
 										</div>
 
-										<form>
-											<div class="form-group row">
-											<label class="col-sm-1 col-form-label">ID:</label>
-												<div class="col-sm-1">
-													<input type="text" class="form-control"
-													 disabled="disabled" >
-												</div>
-												<label class="col-sm-1 col-form-label">Nome:</label>
-												<div class="col-sm-9">
-													<input type="text" class="form-control"
-														placeholder="Nome do usuário">
-												</div>
+										<form class="form-material">
+											<div class="form-group form-default form-static-label">
+												<input type="text" name="footer-email" class="form-control"
+													readonly="readonly" required=""> <span
+													class="form-bar"></span> <label class="float-label">ID:</label>
 											</div>
+											<div class="form-group form-default form-static-label">
+												<input type="text" name="footer-email" class="form-control"
+													required="" placeholder="Informe o nome"> <span
+													class="form-bar"></span> <label class="float-label">Nome:
+												</label>
+											</div>
+
+											<div class="form-group form-default form-static-label">
+												<input type="text" name="footer-email" class="form-control"
+													placeholder="Informe o Email" required=""> <span
+													class="form-bar"></span> <label class="float-label">Email:
+												</label>
+											</div>
+											<div class="form-group form-default form-static-label">
+												<input type="password" name="footer-email"
+													class="form-control" placeholder="Informe a senha"
+													required=""> <span class="form-bar"></span> <label
+													class="float-label">Senha:</label>
+											</div>
+											<button class="btn btn-primary waves-effect waves-light">Salvar</button>
+											<button class="btn btn-primary waves-effect waves-light">Atualizar</button>
+											<button class="btn btn-primary waves-effect waves-light">Pesquisar</button>
+											<button class="btn btn-primary waves-effect waves-light">Excluir</button>
 										</form>
 
 									</div>
