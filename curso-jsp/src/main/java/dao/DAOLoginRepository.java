@@ -22,7 +22,7 @@ public class DAOLoginRepository {
 
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, modelLogin.getLogin());
-			statement.setString(2, modelLogin.getPassword());
+			statement.setString(2, modelLogin.getSenha());
 
 			ResultSet result = statement.executeQuery();
 

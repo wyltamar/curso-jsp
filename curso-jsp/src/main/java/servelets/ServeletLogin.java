@@ -52,7 +52,7 @@ public class ServeletLogin extends HttpServlet {
 			
 			ModelLogin modelLogin = new ModelLogin();
 			modelLogin.setLogin(login);
-			modelLogin.setPassword(password);
+			modelLogin.setSenha(password);
 			
 			if(daoLoginRepository.validarAutenticacao(modelLogin)) { /*SIMULANDO LOGIN*/
 				
