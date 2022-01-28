@@ -10,8 +10,12 @@ CREATE DATABASE "curso-jsp"
   
 CREATE TABLE IF NOT EXISTS public.model_login
 (
-    login character varying(200) COLLATE pg_catalog."default",
-    password_b character varying(200) COLLATE pg_catalog."default",
+    login character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    senha character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    id integer NOT NULL DEFAULT nextval('model_login_id_seq'::regclass),
+    email character varying(300) COLLATE pg_catalog."default" NOT NULL,
+    nome character varying(300) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT model_login_pkey PRIMARY KEY (id),
     CONSTRAINT login_unique UNIQUE (login)
 )
 WITH (
@@ -21,10 +25,13 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.model_login
     OWNER to postgres;
+
+ALTER TABLE public.model_login
+    OWNER to postgres;
     
 
 INSERT INTO public.model_login(
-	login, password_b)
+	login, senha)
 	VALUES ('admin', 'admin');
 	
 
