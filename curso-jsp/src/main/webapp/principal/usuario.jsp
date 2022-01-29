@@ -64,7 +64,7 @@
 
 											<div class="form-group form-default form-static-label">
 												<input type="email" name="email" id="email" class="form-control"
-													placeholder="Informe o Email" required="requerid" value="${modelLogin.email}"> <span
+													placeholder="Informe o Email" required="required" value="${modelLogin.email}"> <span
 													class="form-bar"></span> <label class="float-label">Email:
 												</label>
 											</div>
