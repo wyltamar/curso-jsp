@@ -87,6 +87,8 @@
 										</form>
 
 									</div>
+									<br>
+									<span>${msg}</span>
 									<!-- Page-body end -->
 								</div>
 								<div id="styleSelector"></div>
