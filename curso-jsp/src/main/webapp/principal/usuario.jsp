@@ -86,9 +86,9 @@
 											<button class="btn btn-info waves-effect waves-light">Excluir</button>
 										</form>
 
-									</div>
 									<br>
 									<span>${msg}</span>
+									</div>
 									<!-- Page-body end -->
 								</div>
 								<div id="styleSelector"></div>
