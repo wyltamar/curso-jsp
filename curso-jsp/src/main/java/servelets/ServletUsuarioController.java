@@ -16,6 +16,8 @@ import model.ModelLogin;
 @WebServlet("/ServletUsuarioController")
 public class ServletUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	String msg = "Registro salvo com sucesso!";
     
 	private DAOUsuarioRepository daoUsuarioRepository = new DAOUsuarioRepository();
    
@@ -45,9 +47,14 @@ public class ServletUsuarioController extends HttpServlet {
 		modelLogin.setLogin(login);
 		modelLogin.setSenha(senha);
 		
-		modelLogin = daoUsuarioRepository.gravarUsuario(modelLogin);
+		if(daoUsuarioRepository.validarLogin(modelLogin.getLogin())&& modelLogin.getId() == null) {
+			msg = "Já existe usuário com este login, informe um outro login!";
+		}else {
+			modelLogin = daoUsuarioRepository.gravarUsuario(modelLogin);
+			msg = "Registro salvo com sucesso!";
+		}
 		
-		request.setAttribute("msg", "Registro salvo com sucesso!");
+		request.setAttribute("msg", msg);
 		
 		request.setAttribute("modelLogin", modelLogin);
 		request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
