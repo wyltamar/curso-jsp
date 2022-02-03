@@ -52,11 +52,12 @@ public class ServletUsuarioController extends HttpServlet {
 		}else {
 			
 			if(modelLogin.getId() != null) {
-				daoUsuarioRepository.atualizarUsuario(modelLogin.getId());
+				modelLogin = daoUsuarioRepository.atualizarUsuario(modelLogin);
 				msg = "Registro atualizado com sucesso!";
-			}
+			}else {
 			modelLogin = daoUsuarioRepository.gravarUsuario(modelLogin);
 			msg = "Registro salvo com sucesso!";
+			}
 		}
 		
 		request.setAttribute("msg", msg);

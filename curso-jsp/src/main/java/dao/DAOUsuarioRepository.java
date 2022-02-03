@@ -73,11 +73,11 @@ public class DAOUsuarioRepository {
 		return resultado.getBoolean("existe");
 	}
 	
-	public boolean atualizarUsuario(Long id) throws Exception {
+	public ModelLogin atualizarUsuario(ModelLogin modelLogin) throws Exception {
 		
-		ModelLogin modelLogin  = new ModelLogin();
 		
-		String sql = "UPDATE model_login SET login = '?',senha = '?', email = '?', nome = '?'  WHERE id = '"+id+"'";
+		
+		String sql = "UPDATE model_login SET login = ?,senha = ?, id = ?, email = ?, nome = ?  WHERE id = '"+modelLogin.getId()+"'";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
 		
@@ -87,11 +87,11 @@ public class DAOUsuarioRepository {
 		statement.setString(4, modelLogin.getEmail());
 		statement.setString(5, modelLogin.getNome());
 		
-		statement.execute();
+		statement.executeUpdate();
 		
 		connection.commit();
 		
-		return true;
+		return modelLogin;
 	}
 
 }
